@@ -11,7 +11,7 @@ const TABS: { key: TabKey; label: string; icon: string }[] = [
   { key: "elagage", label: "Élagage", icon: "/icons-services/élagage.png" },
   { key: "abattage", label: "Abattage", icon: "/icons-services/abattage.png" },
   { key: "dessouchage", label: "Dessouchage", icon: "/icons-services/dessouchage.png" },
-  { key: "dechets", label: "Traitement des déchets", icon: "/icons-services/traitement.png" },
+  { key: "dechets", label: "Les déchets", icon: "/icons-services/traitement.png" },
   { key: "taille", label: "Taille de haie", icon: "/icons-services/taille.png" },
   { key: "cloture", label: "Clôture", icon: "/icons-services/cloture.png" },
 ];
@@ -30,7 +30,7 @@ export default function Prestations() {
 
   const CONTENT: Record<TabKey, { image: string; title: string; paragraphs: string[] }> = {
     elagage: {
-      image: "/outside.jpg",
+      image: "/elagage.jpg",
       title: "Élagage en accès simples ou difficiles",
       paragraphs: [
         "Interventions en grimpe ou à la nacelle pour sécuriser toitures, façades et voies de circulation.",
@@ -40,7 +40,7 @@ export default function Prestations() {
       ],
     },
     abattage: {
-      image: "/cut.jpg",
+      image: "/abatage.jpg",
       title: "Démontage contrôlé branche par branche",
       paragraphs: [
         "Abattage classique quand l’espace au sol le permet ; sinon démontage en sections avec rétention.",
@@ -50,7 +50,7 @@ export default function Prestations() {
       ],
     },
     dessouchage: {
-      image: "/images/pelle.png",
+      image: "/dessouchage.jpg",
       title: "Rognage précis des souches",
       paragraphs: [
         "Rognage mécanique jusqu’au niveau souhaité pour libérer l’emprise et éviter les rejets.",
@@ -60,7 +60,7 @@ export default function Prestations() {
       ],
     },
     dechets: {
-      image: "/sd.jpg",
+      image: "/dechets.webp",
       title: "Gestion responsable des déchets verts",
       paragraphs: [
         "Broyage sur place pour paillage ou évacuation en benne selon le volume.",
@@ -70,7 +70,7 @@ export default function Prestations() {
       ],
     },
     taille: {
-      image: "/grass.jpg",
+      image: "/haie.jpg",
       title: "Haies régulières et denses",
       paragraphs: [
         "Taille de formation, d’entretien ou de reprise pour harmoniser hauteurs et épaisseurs.",
@@ -80,7 +80,7 @@ export default function Prestations() {
       ],
     },
     cloture: {
-      image: "/public/images/banner.png",
+      image: "/cloture.jpg",
       title: "Pose & réparation de clôtures",
       paragraphs: [
         "Fourniture et pose de grillage souple/rigide, panneaux bois ou occultants selon vos contraintes.",
@@ -93,7 +93,7 @@ export default function Prestations() {
 
   return (
     <section className="w-full bg-white sm:mt-0 mt-2">
-      {/* Onglets (mobile : scroll horizontal) */}
+      
       <nav
         id="prestations-tabs"
         className="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-3 md:gap-5 overflow-x-auto md:overflow-visible px-4 md:px-0"
@@ -106,10 +106,10 @@ export default function Prestations() {
               key={key}
               onClick={() => setActive(key)}
               className={[
-                "px-3 sm:py-2 text-xs font-semibold py-3 sm:my-0 my-3 rounded-full whitespace-nowrap flex items-center gap-2",
+                "px-3 sm:py-2 justify-center text-xs font-semibold py-3 sm:my-0 my-3 rounded-full whitespace-nowrap flex items-center gap-2",
                 "md:w-44 md:h-14 md:px-6 md:text-sm md:rounded-none md:rounded-b-[22px]",
                 "transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
-                isActive ? "text-white" : "bg-black text-white md:hover:bg-neutral-900",
+                isActive ? "text-white" : " cursor-pointer hover:bg-fluo  bg-black text-white md:hover:bg-neutral-900",
               ].join(" ")}
               style={isActive ? { backgroundColor: OLIVE } : undefined}
               aria-pressed={isActive}
@@ -118,7 +118,7 @@ export default function Prestations() {
               <span className="relative inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 shrink-0">
                 <Image src={icon} alt="" fill sizes="32px" className="object-contain" />
               </span>
-              <span>{label}</span>
+              <span className="flex flex-wrap ">{label}</span>
             </button>
           );
         })}
