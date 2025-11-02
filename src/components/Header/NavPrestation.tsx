@@ -5,8 +5,9 @@ import { FaSearch } from "react-icons/fa";
 import { RiTreeFill } from "react-icons/ri";
 import { GiGardeningShears } from "react-icons/gi";
 import { TbGardenCart } from "react-icons/tb";
-import MiniNav from "@/app/optiondescription/contractyearly/page";
+
 import { GiOakLeaf } from "react-icons/gi";
+ 
 type NavImg = {
   icon: React.JSX.Element;
   text: string;
@@ -72,7 +73,7 @@ export default function NavPrestation() {
           </li>
         ))}
       </ul>
-      <MiniNav slug={value} />
+       
     </section>
   );
 }
