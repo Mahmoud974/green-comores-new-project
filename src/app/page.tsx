@@ -22,9 +22,10 @@ export default function page() {
     <GreenBar/>
     <Navbar/>
   <Home/>
+  <Service/>
     <Services/>
     <About/>
-    <Service/>
+   
    <Prestations/>
    
    <Informations/>

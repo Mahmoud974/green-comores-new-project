@@ -1,89 +1,76 @@
-import React from 'react'
-import Image from 'next/image'
+"use client";
+
+import React from "react";
+import {
+  Trees,
+  Scissors,
+  ShieldCheck,
+  AlarmClock,
+  Sprout,
+  Flower2,
+} from "lucide-react";
 
 export default function Service() {
-  const services = [
+  const items = [
     {
-      icon: (
-        <Image
-          src="/icons/icons-services/tree.png"
-          alt="Élagage"
-          width={90}
-          height={90}
-        />
-      ),
+      Icon: Trees,
       title: "Élagage & taille douce",
-      description: "Taille raisonnée pour sécuriser vos abords, éclaircir la couronne et préserver la vigueur de l’arbre."
+      desc: "Taille raisonnée pour sécuriser les abords et préserver la vigueur de l’arbre.",
     },
     {
-      icon: (
-        <Image
-          src="/icons/icons-services/abbatage.png"
-          alt="Abattage"
-          width={90}
-          height={90}
-        />
-      ),
+      Icon: Scissors,
       title: "Abattage difficile",
-      description: "Démontage contrôlé avec rétention de charges pour les zones exigües ou à proximité d’ouvrages."
+      desc: "Démontage contrôlé avec rétention en zones exigües ou proches d’ouvrages.",
     },
     {
-      icon: (
-        <Image
-          src="/icons/icons-services/security.png"
-          alt="Sécurité"
-          width={90}
-          height={90}
-        />
-      ),
+      Icon: ShieldCheck,
       title: "Mise en sécurité",
-      description: "Suppression de branches mortes, sécurisation après tempête et levée de risques (toitures, lignes, voirie)."
+      desc: "Suppression de branches mortes, sécurisation post-tempête, levée de risques.",
     },
     {
-      icon: (
-        <Image
-          src="/icons/icons-services/urgence.png"
-          alt="Urgence"
-          width={90}
-          height={90}
-        />
-      ),
+      Icon: AlarmClock,
       title: "Urgence 24/7",
-      description: "Intervention rapide en cas de chute d’arbre ou danger imminent (week-ends & jours fériés inclus)."
-    }
-  ]
+      desc: "Intervention rapide en cas de chute d’arbre ou danger imminent.",
+    },
+    {
+      Icon: Sprout,
+      title: "Entretien & tonte",
+      desc: "Tonte, désherbage sélectif et soins réguliers pour des espaces nets.",
+    },
+    {
+      Icon: Flower2,
+      title: "Création de jardins",
+      desc: "Conception et plantation sur-mesure, respectueuses de la biodiversité.",
+    },
+  ];
 
   return (
-    <section className='w-full bg-[#F5F5DC] py-20'>
-      <div className='container mx-auto px-4'>
-        <div className='text-center mb-16'>
-          <p className='text-green-700 font-bold text-sm tracking-widest uppercase mb-4'>NOS SERVICES ESSENTIELS</p>
-          <h3 className='font-bold text-3xl lg:text-4xl text-gray-900 leading-tight'>
-            L’essentiel pour vos arbres et votre sécurité
-          </h3>
-        </div>
-
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-          {services.map((service, index) => (
-            <div key={index} className='text-center'>
-              {/* Icône circulaire */}
-              <div className='w-20 h-20 mx-auto mb-8    rounded-full flex items-center justify-center '>
-                {service.icon}
+    <section className="w-full bg-[#0C2316] py-20 font-['Montserrat']">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
+          {items.map(({ Icon, title, desc }, i) => (
+            <div
+              key={i}
+              className="flex items-start gap-5 transition-transform duration-300 hover:translate-x-1"
+            >
+              {/* Pastille icône */}
+              <div className="shrink-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#A8E86E]/25 border border-[#A8E86E]/50">
+                <Icon className="h-7 w-7 text-[#A8E86E]" />
               </div>
 
-              {/* Titre */}
-              <h4 className='font-bold text-xl text-gray-900 mb-3'>
-                {service.title}
-              </h4>
-
-              {/* Description */}
-              <p className='text-gray-700 leading-relaxed text-sm'>
-                {service.description}
-              </p>
+              {/* Texte */}
+              <div>
+                <h4 className="text-[16px] sm:text-lg font-semibold text-[#A8E86E] mb-1">
+                  {title}
+                </h4>
+                <p className="text-[14px] text-[#E2EDE1] leading-relaxed">
+                  {desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

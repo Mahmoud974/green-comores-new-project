@@ -92,7 +92,7 @@ export default function Prestations() {
   };
 
   return (
-    <section className="w-full bg-white sm:mt-0 mt-2">
+    <section className="w-full   bg-white sm:mt-0 mt-2">
       
       <nav
         id="prestations-tabs"
@@ -130,7 +130,7 @@ export default function Prestations() {
       `}</style>
 
       {/* Contenu */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 ">
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           {/* Colonne gauche */}
           <div className="w-full lg:w-1/2">

@@ -6,7 +6,7 @@ export default function Informations() {
     <section className="w-full font-['Montserrat']">
       <div className="flex flex-col md:flex-row">
         {/* Colonne gauche */}
-        <div className="order-1 w-full md:w-2/5 justify-end md:pr-16 bg-[#6b8e23] text-white h-auto md:h-[520px] flex py-10 md:py-0">
+        <div className="order-1 w-full md:w-2/5 justify-end md:pr-16 bg-[#2c5c00] text-white h-auto md:h-[520px] flex py-10 md:py-0">
           <div className="px-6 md:px-12 my-auto text-center md:text-left max-w-xl mx-auto md:mx-0">
             <p className="text-[11px] md:text-lg font-semibold tracking-widest text-fluo">
               BEST SERVICE FOR YOU
@@ -62,7 +62,7 @@ export default function Informations() {
         </div>
 
         {/* Colonne droite (image) */}
-        <div className="order-2 relative block md:block w-full md:w-3/5 h-60 md:h-[520px]">
+        <div className="order-2 relative hidden md:block w-full md:w-3/5 h-56 md:h-[520px]">
           <Image
             src="/images/img-hand.png"
             alt="Hands holding soil"
