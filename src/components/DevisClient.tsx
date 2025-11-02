@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
+import SelectorMenu from "./SelectorMenu";
 
 export default function DevisClient() {
   const [selectedOption, setSelectedOption] = useState(0)
@@ -10,7 +11,7 @@ export default function DevisClient() {
     "Création et aménagement d'un jardin"
   ]
   return (
-    <section className="w-full font-['Montserrat']">
+    <section className="w-full  font-['Montserrat']">
       <div className="flex flex-col md:flex-row">
            {/* Colonne dgauche (image) */}
            <div className="relative w-full md:w-3/5 h-[240px] md:h-[520px]">
@@ -26,12 +27,14 @@ export default function DevisClient() {
         {/* Colonne droite  */}
         <div className="w-full md:w-3/5 justify-tart     text-white h-[360px] md:h-[520px] flex">
          {/* Right Column - Quote Form */}
-         <div className='px-8 md:px-24 my-auto'>
+         <div className='px-8 md:px-24 flex mx-auto my-auto'>
             <div className='max-w-lg mx-auto text-center'>
               <p className='text-green font-bold text-sm tracking-widest uppercase mb-4'>DEVIS</p>
               <h3 className='font-bold text-2xl lg:text-3xl text-gray-900 mb-8 leading-tight'>
                 Vous souhaitez aménager ou entretenir votre jardin ?
               </h3>
+              <h1 className="text-black text-2xl font-bold text-left">Je suis *</h1>
+              <SelectorMenu/>
               
               <div className='space-y-4'>
                 {options.map((option, index) => (

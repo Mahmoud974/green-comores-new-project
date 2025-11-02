@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ArrowRight, Trees, Leaf, Smile, HardHat } from "lucide-react";
 import Image from "next/image";
 
-// --- Accessibility-friendly reduced motion hook
+ 
 function usePrefersReducedMotion() {
   const [reduced, setReduced] = useState(false);
   useEffect(() => {
@@ -16,7 +16,7 @@ function usePrefersReducedMotion() {
   return reduced;
 }
 
-// --- Gentle, eased count-up (respects reduced motion)
+ 
 function CountUp({ end, duration = 1100 }: { end: number; duration?: number }) {
   const reduced = usePrefersReducedMotion();
   const [val, setVal] = useState(end);
@@ -39,7 +39,7 @@ function CountUp({ end, duration = 1100 }: { end: number; duration?: number }) {
   return <span>{new Intl.NumberFormat("fr-FR").format(val)}</span>;
 }
 
-// --- New COUNTERS DESIGN: compact strip with separators + subtle glow
+ 
 function StatsStrip() {
   const items = [
     { n: 30, label: "Ans d’expérience", Icon: HardHat },
@@ -62,12 +62,12 @@ function StatsStrip() {
             key={label}
             className="relative flex items-center gap-3 md:gap-4 px-4 py-3 md:px-6 md:py-5"
           >
-            {/* vertical separators */}
+          
             {i > 0 && (
               <div className="absolute left-0 top-3 bottom-3 w-px bg-white/10" aria-hidden />
             )}
 
-            {/* icon chip */}
+        
             <span
               className="inline-flex h-9 w-9 md:h-10 md:w-10 items-center justify-center rounded-xl border border-white/15 bg-gradient-to-br from-white/15 to-transparent shadow-inner"
               style={{ backdropFilter: "blur(8px)" }}
@@ -95,29 +95,30 @@ export default function Home() {
   return (
     <>
       <div className="relative w-full h-[65vh] sm:h-[70vh] md:h-[80vh]">
-        <Image
-          src="/images/banner.png"
-          alt="Travaux d'entretien paysager en arrière-plan"
-          fill
-          priority
-          quality={100}
-          className="object-cover"
-        />
-        {/* overlay for contrast */}
+      <Image
+  src="/images/banner.png"
+  alt="Travaux d'entretien paysager en arrière-plan"
+  fill
+  priority
+  quality={100}
+  className="object-cover brightness-[0.85]" 
+/>
+
+      
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/35 to-transparent" />
 
         <div className="absolute inset-0 flex items-center">
           <div className="container mx-auto px-4">
-            <div className="inline-block bg-[#3A6317] text-[#CFF28A] -rotate-1 text-xs sm:text-sm md:text-base tracking-[0.2em] font-semibold py-1.5 px-3 shadow-md mb-3">
+            <div className="inline-block bg-[#3A6317] text-[#CFF28A] -rotate-1  md:text-3xl tracking-[0.2em] font-semibold py-1.5 px-3 shadow-md mb-3">
               INSTANT · SIMPLE · SMART
             </div>
 
-            <h1 className="max-w-3xl text-white text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight drop-shadow">
+            <h1 className="max-w-3xl text-white   sm:text-5xl md:text-7xl font-extrabold leading-tight drop-shadow">
               Spécialiste en <span className="text-[#9BE44D]">élagage</span> & soin des arbres à
               grande hauteur
             </h1>
 
-            {/* NEW: compact stats strip replacing the card grid */}
+         
             <div className="mt-5 max-w-4xl">
               <StatsStrip />
             </div>

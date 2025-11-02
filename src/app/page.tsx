@@ -1,7 +1,7 @@
 import About from "@/components/About";
 import AccordionFaq from "@/components/AccordionFaq";
 import BannerCenter from "@/components/BannerCenter";
-import DevisClient from "@/components/DevisClient";
+
 import Footer from "@/components/Footer.tsx/Footer";
 import GreenBar from "@/components/GreenBar";
 import Informations from "@/components/Informations";
@@ -28,7 +28,7 @@ export default function page() {
    <Prestations/>
    
    <Informations/>
-  <DevisClient/>
+  {/* <DevisClient/> */}
     
    <BannerCenter/>
    <Realisation/>
